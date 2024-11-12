@@ -1,6 +1,7 @@
 package com.dave.a13aospapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,7 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     Button mBtnBtView,mBtnWifiView;
     Context mContext;
     private static final String TAG = "MainActivity";
@@ -47,19 +48,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 初始化点击事件
      */
     private void initClick() {
-        mBtnBtView.setOnClickListener(this);
+        //mBtnBtView.setOnClickListener(this);
 
     }
 
-    @Override
-    public void onClick(View view) {
-        int id = view.getId();
-        switch (id){
-            case R.id.btn_bt:
-                Log.d(TAG,"init bt");
-                break;
-            default:
-                break;
-        }
+
+    public void openBtSettings(View view) {
+        startActivity(new Intent(this,BtSettingsActivity.class));
     }
 }
