@@ -2,11 +2,14 @@ package com.dave.a13aospapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
+import android.Manifest;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -41,6 +44,19 @@ public class MainActivity extends AppCompatActivity {
      * 初始化数据
      */
     private void initData() {
+        // Android 6.0动态请求权限
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION
+                    ,Manifest.permission.BLUETOOTH_CONNECT
+                    ,Manifest.permission.BLUETOOTH
+                    , Manifest.permission.ACCESS_COARSE_LOCATION};
+            for (String str : permissions) {
+                if (checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(permissions, 111);
+                    break;
+                }
+            }
+        }
 
     }
 

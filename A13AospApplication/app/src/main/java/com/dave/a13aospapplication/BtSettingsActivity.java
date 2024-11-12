@@ -5,6 +5,7 @@ import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -34,9 +35,14 @@ public class BtSettingsActivity extends AppCompatActivity {
 
     @SuppressLint("MissingPermission")
     public void openBt(View view) {
-        BluetoothAdapter defaultAdapter = BluetoothAdapter.getDefaultAdapter();
-        boolean adapterEnabled = defaultAdapter.isEnabled();
-        boolean enable = defaultAdapter.enable();
-        Log.d(TAG,"openBt 2222 enable="+enable+",adapterEnabled="+adapterEnabled);
+        BluetoothManager bluetoothManager = getSystemService(BluetoothManager.class);
+        BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();
+        Log.d(TAG,"openBt 2222 bluetoothAdapter="+bluetoothAdapter);
+        if (bluetoothAdapter == null) {
+            // Device doesn't support Bluetooth
+        }else{
+            boolean enable = bluetoothAdapter.enable();
+
+        }
     }
 }
