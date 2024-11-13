@@ -5,14 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="50dp"
+    android:paddingTop="20dp"
     tools:context=".BtSettingsActivity">
-    <Button
-
-        android:text="打开蓝牙"
+    <ToggleButton
+        android:id="@+id/operateBt"
+        android:checked="true"
+        android:textOff="关闭蓝牙"
+        android:textOn="打开蓝牙"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="openBt"
         />
 
 </LinearLayout>
