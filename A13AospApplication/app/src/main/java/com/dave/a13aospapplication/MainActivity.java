@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE
                     , Manifest.permission.READ_EXTERNAL_STORAGE
                     ,Manifest.permission.BLUETOOTH_CONNECT
+                    , Manifest.permission.CHANGE_WIFI_STATE
                     ,Manifest.permission.ACCESS_FINE_LOCATION
                     , Manifest.permission.ACCESS_COARSE_LOCATION};
             for (String str : permissions) {
@@ -86,5 +87,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void openBtSettings(View view) {
         startActivity(new Intent(this,BtSettingsActivity.class));
+    }
+
+    public void openWifiSettings(View view) {
+        startActivity(new Intent(this,WifiSettingsActivity.class));
     }
 }
