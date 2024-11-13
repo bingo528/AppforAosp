@@ -34,10 +34,12 @@ public class BtSettingsActivity extends AppCompatActivity implements CompoundBut
     int REQUEST_DISABLE_BT  = 666;
     BluetoothAdapter mBluetoothAdapter;
     ToggleButton mOperateBt;
+    Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        mContext = this;
         setContentView(R.layout.activity_bt_settings);
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         mOperateBt = (ToggleButton) findViewById(R.id.operateBt);
@@ -100,6 +102,7 @@ public class BtSettingsActivity extends AppCompatActivity implements CompoundBut
             //TODO 关闭现在还有问题 20241113
             //operateBt(BluetoothAdapter.ACTION_REQUEST_DISABLE,REQUEST_DISABLE_BT);
             //mBluetoothAdapter.disable();
+            Toast.makeText(mContext,"关闭还有问题待调试",Toast.LENGTH_SHORT).show();
         }else {
             operateBt(BluetoothAdapter.ACTION_REQUEST_ENABLE,REQUEST_ENABLE_BT);
         }
