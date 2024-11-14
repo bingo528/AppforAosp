@@ -5,22 +5,26 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    tools:context=".MainActivity">
-
+    tools:context=".WifiSettingsActivity"
+    android:orientation="vertical"
+    >
     <Button
-        android:id="@+id/btn_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="蓝牙操作"
-        android:onClick="openBtSettings"
+        android:text="打开wifi"
+        android:onClick="openWifi"
         />
     <Button
-        android:id="@+id/btn_wifi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="wifi操作"
-        android:onClick="openWifiSettings"
+        android:text="打开wifi热点"
+        android:onClick="openWifiHot"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取wifi mac"
+        android:onClick="getWifiMac"
         />
 
 </LinearLayout>
