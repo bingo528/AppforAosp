@@ -24,4 +24,19 @@ public class WifiSettingsActivity extends AppCompatActivity {
     public void openWifi(View view) {
         mWifiManager.setWifiEnabled(true);
     }
+
+    /**
+     * 获取mac地址
+     * @param view
+     */
+    public void getWifiMac(View view) {
+    }
+
+    /**
+     * 打开wifi 热点
+     * @param view
+     */
+    public void openWifiHot(View view) {
+        
+    }
 }

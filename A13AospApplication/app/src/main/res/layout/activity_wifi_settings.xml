@@ -14,5 +14,17 @@
         android:text="打开wifi"
         android:onClick="openWifi"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开wifi热点"
+        android:onClick="openWifiHot"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取wifi mac"
+        android:onClick="getWifiMac"
+        />
 
 </LinearLayout>
