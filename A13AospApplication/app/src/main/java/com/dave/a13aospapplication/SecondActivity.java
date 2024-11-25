@@ -40,7 +40,11 @@ public class SecondActivity extends AppCompatActivity {
         super.onResume();
         Log.d(TAG,"testlife SecondActivity onResume");
     }
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG,"testlife SecondActivity onPause");
+    }
     @Override
     protected void onStop() {
         super.onStop();
