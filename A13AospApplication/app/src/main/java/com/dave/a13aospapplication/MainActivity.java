@@ -33,12 +33,41 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
+        Log.d(TAG,"testlife MainActivity onCreate");
         initView();
         initData();
         initClick();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG,"testlife MainActivity onStart");
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG,"testlife MainActivity onResume");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG,"testlife MainActivity onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG,"testlife MainActivity onDestroy");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG,"testlife MainActivity onRestart");
+    }
 
     /**
      * 初始化view
@@ -91,5 +120,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void openWifiSettings(View view) {
         startActivity(new Intent(this,WifiSettingsActivity.class));
+    }
+
+    public void testLifeActivity(View view) {
+        startActivity(new Intent(this,SecondActivity.class));
     }
 }

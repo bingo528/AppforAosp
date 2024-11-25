@@ -1,6 +1,7 @@
 package com.dave.a13aospapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -37,6 +38,8 @@ public class WifiSettingsActivity extends AppCompatActivity {
      * @param view
      */
     public void openWifiHot(View view) {
-        
+        Intent intent = new Intent();
+        intent.setAction("");
+        sendBroadcast(intent);
     }
 }
