@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -45,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG,"testlife MainActivity onStart");
     }
 
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.d(TAG,"testlife MainActivity onRestoreInstanceState");
+    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -63,12 +70,18 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG,"testlife MainActivity onStop");
     }
 
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG,"testlife MainActivity onDestroy");
     }
-
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        Log.d(TAG,"testlife MainActivity onSaveInstanceState");
+    }
     @Override
     protected void onRestart() {
         super.onRestart();
