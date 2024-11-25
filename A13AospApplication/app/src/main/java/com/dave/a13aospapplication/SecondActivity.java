@@ -4,8 +4,10 @@ import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 
@@ -36,6 +38,12 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.d(TAG,"testlife SecondActivity onRestoreInstanceState");
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         Log.d(TAG,"testlife SecondActivity onResume");
@@ -49,6 +57,12 @@ public class SecondActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.d(TAG,"testlife SecondActivity onStop");
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        Log.d(TAG,"testlife SecondActivity onSaveInstanceState");
     }
 
     @Override
